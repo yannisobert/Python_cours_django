@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>card Records</title>
+        <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<h1>INDEX</h1>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>card Name</th>
+        <th>card Stock</th>
+        <th>card Price</th>
+        <th>card Picture</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for card in cards %}
+    <tr>
+        <td><a href="/app1/show/{{ card.id }}">{{ card.cname }}</a></td>
+        <td>{{ card.cstock }}</td>
+        <td>{{ card.cprice }}</td>
+        <td><img src="{{ card.cpicture }}" alt="" style="height: 50px; width: auto"></td>
+        <td><a href="/app1/update/{{ card.id }}">EDIT</a></td>
+        <td><a href="/app1/delete/{{ card.id }}">DELETE</a></td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="/app1/create" class="btn btn-primary">Add New Card</a></center>
+</body>
+</html>

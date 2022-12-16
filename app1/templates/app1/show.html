@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>
+</head>  
+<body>
+<h1>Show</h1>
+<form method="POST" class="post-form" action="/app1/delete/{{card.id}}">
+        {% csrf_token %}  
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">card Name:</label>
+    <div class="col-sm-4">
+        <p>{{ card.cname }}</p>
+    </div>
+  </div>
+        <hr>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">card Stock:</label>
+    <div class="col-sm-4">
+        <p>{{ card.cstock }}</p>
+    </div>
+  </div>
+        <hr>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">card Price:</label>
+    <div class="col-sm-4">
+        <p>{{ card.cprice }}</p>
+    </div>
+  </div>
+        <hr>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">card Picture:</label>
+    <div class="col-sm-4">
+        <p>{{ card.cpicture }}</p>
+    </div>
+  </div>
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">DELETE</button>
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>
