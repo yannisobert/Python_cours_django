@@ -9,19 +9,43 @@
 </head>
 <body>
 <h1>INDEX</h1>
-<table class="table table-striped table-bordered table-sm">
-    <thead class="thead-dark">
-    <tr>
-        <th>card Name</th>
-        <th>card Stock</th>
-        <th>card Price</th>
-        <th>card Picture</th>
-        <th>EDIT</th>
-        <th>DELETE</th>
-    </tr>
-    </thead>
-    <tbody>
-{% for card in cards %}
+
+
+
+
+
+
+
+<ul class="cards">
+    {% for card in cards %}
+
+  <li>
+    <a href="/app1/show/{{ card.id }}" class="card">
+      <img src="{{ card.cpicture }}" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <div class="card__header-text">
+            <h3 class="card__title">{{ card.cname}}</h3>
+            <span class="card__tagline">Price: {{ card.cprice }} $</span>
+            <span class="card__tagline">Stock: {{ card.cstock }}</span>
+            <span class="card__tagline">Stock: {{ card.cpicture }}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+    {% endfor %}
+
+</ul>
+
+
+
+
+
+
+
+
+<!--{% for card in cards %}
     <tr>
         <td><a href="/app1/show/{{ card.id }}">{{ card.cname }}</a></td>
         <td>{{ card.cstock }}</td>
@@ -30,11 +54,7 @@
         <td><a href="/app1/update/{{ card.id }}">EDIT</a></td>
         <td><a href="/app1/delete/{{ card.id }}">DELETE</a></td>
     </tr>
-{% endfor %}
-    </tbody>
-</table>
-<br>
-<br>
+{% endfor %}-->
 <center><a href="/app1/create" class="btn btn-primary">Add New Card</a></center>
 </body>
 </html>
