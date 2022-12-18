@@ -9,33 +9,24 @@
 </head>
 <body>
 <h1>INDEX</h1>
-
-
-
-
-
-
-
 <ul class="cards">
     {% for card in cards %}
-
-  <li>
-    <a href="/app1/show/{{ card.id }}" class="card">
-      <img src="{{ card.cpicture }}" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-          <div class="card__header-text">
-            <h3 class="card__title">{{ card.cname}}</h3>
-            <span class="card__tagline">Price: {{ card.cprice }} $</span>
-            <span class="card__tagline">Stock: {{ card.cstock }}</span>
-            <span class="card__tagline">Stock: {{ card.cpicture }}</span>
-          </div>
-        </div>
-      </div>
-    </a>
-  </li>
+        <li>
+          <a href="/app1/show/{{ card.id }}" class="card">
+            <img src="{{ card.cpicture }}" class="card__image" alt="" />
+            <div class="card__overlay">
+              <div class="card__header">
+                <div class="card__header-text">
+                  <h3 class="card__title">{{ card.cname}}</h3>
+                  <span class="card__tagline">Price: {{ card.cprice }} $</span>
+                  <span class="card__tagline">Stock: {{ card.cstock }}</span>
+                  <span class="card__tagline">Stock: {{ card.cpicture }}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
     {% endfor %}
-
 </ul>
 
 
